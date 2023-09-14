@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>bonefloss art</title>
+	<link href="posterStylesheet.css" rel="stylesheet" />
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body>
+	<header>
+			<img src="header.png" alt="Bonefloss" />
+		<nav class="horizontal">
+         <ul class="mainmenu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="posterGallery.html">Posters </a></li>
+            <li><a href="pixelGallery.html">Pixels </a></li>
+            <li><a href="prices.html">Prices/Contact</a></li>
+			<li><a href="WIP.html">WIP</a></li>
+			<li><a href="script.html">Script Test</a></li>
+         </ul>
+      </nav>
+	</header>
+	<body>
+<br>
+
+
+<section id="postInProgress">
+<!-- <header><h1>WIP post</h1></header><br>-->
+<br>
+<center>0`_´0  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   ( ง •̀_•́)ง  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ¯\_(ツ)_/¯ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;é </center>
+<br><br>
+
+    <form id="postSpace">
+
+			<textarea name="wipTextBox" id="commBox"></textarea>
+
+	</form>
+<script>
+    const form = document.querySelector('form');
+    const FORM_DATA = 'FORM-DATA';
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const fromStorage = localStorage.getItem(FORM_DATA);
+        if (!fromStorage) return;
+
+        const json = JSON.parse(fromStorage);
+
+        for (const textarea of form.querySelectorAll('textarea')) {
+            textarea.value = json[textarea.name];
+        }
+    });
+
+    form.addEventListener('keyup', () => {
+        const formData = Object.fromEntries([...new FormData(form)]);
+        localStorage.setItem(FORM_DATA, JSON.stringify(formData));
+    });
+	
+	
+</script>
+
+
+</section>
+
+	</body>
+<footer>
+</footer>
